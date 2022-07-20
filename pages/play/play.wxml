@@ -1,0 +1,59 @@
+<!--pages/play/play.wxml-->
+
+<import src="../../templates/gloabal/gloabal" />
+
+<view>
+  <!--视频-->
+  <!--TODO 视频置顶-->
+  <video src="{{videoDetail.videoPlayUrl}}" autoplay="true" style="width: 100%;">
+  </video>
+  <van-tabs active="{{ active }}" bind:change="onChange" animated swipeable sticky>
+    <van-tab title="简介">
+      <view class="detail" style="flex-direction: row;">
+        <!--标题-->
+        <view style="font-size: large;font-weight: bold;">{{videoDetail.videoTitle?videoDetail.videoTitle:"标题"}}</view>
+        <!--播放数据-->
+        <view style="font-size: small;color: gray;margin-top: 16rpx;">{{videoDetail.categories}} {{videoDetail.time}} {{videoDetail.countView}}次播放</view>
+        <view class="desc {{descShow?'':'descHide'}}" catchtap="onDescClick">{{videoDetail.desc?videoDetail.desc:"暂无简介"}}</view>
+        <!--操作-->
+        <view class="playMenus">
+          <van-grid-item icon="good-job-o" text="{{videoDetail.countLike}}" />
+          <van-grid-item icon="star-o" text="{{videoDetail.countCollect}}" />
+          <van-grid-item icon="share-o" text="{{videoDetail.countShare}}" bindtap="share" />
+          <van-grid-item icon="down" text="下载" badge="VIP" />
+        </view>
+      </view>
+      <!--标签-->
+      <template is="tagCards" data="{{tags}}"></template>
+      <!--创作团队-->
+      <template is="creatorSmailCard" data="{{teams}}"></template>
+      <!--相似视频-->
+      <van-loading wx:if="{{!videoList}}" color="#1989fa" style="width: 100%;height: 100px;padding: 16px;margin-top: 32px;" size="24px">相关视频加载中...</van-loading>
+      <view wx:if="{{videoList}}" style="font-weight: bold;  font-size: 14px;padding:0 32rpx;padding-top: 16rpx;">相似视频</view>
+      <template is="videoList" wx:if="{{videoList}}" data="{{videoList}}"></template>
+    </van-tab>
+    <van-tab title="评论" info="{{videoDetail.countComment}}">
+      <view class="detail" style="flex-direction: row;">
+        <!--评论-->
+        <van-loading wx:if="{{!videoComment}}" color="#1989fa" style="width: 100%;height: 100px;padding: 16px;margin-top: 16px;" size="24px">评论加载中...</van-loading>
+        <view wx:if="{{videoComment&&videoComment.length==0}}">无评论</view>
+        <view wx:for="{{videoComment}}" style="margin-bottom: 8px;flex-direction: row;display: flex;padding-bottom: 12px;" wx:key="index">
+          <van-image round width="48rpx" height="48rpx" src="{{item.userInfo.avatar}}" />
+          <view style="flex-direction: column;padding-left: 24rpx;width: 100%;">
+            <view style="font-size: 20rpx;margin-bottom: 8rpx;">{{item.userInfo.username}}</view>
+            <text decode="true" style="font-size: 26rpx;">{{item.content}}</text>
+            <view style="display: flex;flex-direction: row;width: 100%;justify-content: space-between;">
+              <view style="font-size: 8px;padding-top: 10px;">{{item.addDate}}</view>
+              <view style="font-size: 12px;margin-top: auto;margin-bottom: auto;">
+                <van-icon name="good-job-o" /> {{item.count_approve}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>
+
+<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onShareSelect" bind:close="onShareClose" />
+<van-toast id="van-toast" class="bottom" />

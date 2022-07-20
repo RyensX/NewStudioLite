@@ -1,0 +1,23 @@
+<!--home.wxml-->
+<wxs src="../../utils/icons.wxs" module="icons"/>
+<view class="videoContainer">
+  <!--视频内容-->
+  <swiper vertical="true" circular="{{true}}" bindchange="bindSwiper">
+    <block wx:for="{{videoList}}" wx:key="{{index}}" wx:if="{{videoList.length>0}}">
+      <swiper-item style="height: 100%;">
+        <video id="video_{{index}}" bindtap="onVideoClick" src="{{item.url}}" show-fullscreen-btn="{{false}}" controls="{{false}}" loop="{{true}}" autoplay="{{index===0}}" show-center-play-btn="true"></video>
+        <view>测试</view>
+        <!--右侧工具栏-->
+        <cover-view class="tool1">
+        <!--TODO 头像-->
+          <cover-image src="{{icons.share}}" class="icon"></cover-image>
+          <button>评论</button>
+           <button>收藏</button>
+          <button open-type="share">分享</button>
+        </cover-view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+</view>

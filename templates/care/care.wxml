@@ -1,0 +1,25 @@
+<template name="careListItem">
+  <view class="item">
+    <view class="top">
+      <view class="left">
+        <image lazy-load="true" mode="widthFix" class="avatar" src="https://images.weserv.nl/?url={{avatar}}"></image>
+        <view>
+          <view class="uname">{{username}}</view>
+          <view class="desc">{{occupation}}.{{location.province.name}}</view>
+        </view>
+      </view>
+      <view class="right">关注</view>
+    </view>
+    <view class="bottom">
+      <image lazy-load="true" mode="widthFix" class="imgs" wx:for="{{articles}}" src="{{item.cover}}"></image>
+    </view>
+  </view>
+</template>
+
+<template name="feed">
+  <view style="margin: 24px;font-size: small;font-weight: bold;">你可能感兴趣的创作人</view>
+  <view wx:for="{{data.list[0].data.list}}">
+    <template is="careListItem" data="{{...item}}">
+    </template>
+  </view>
+</template>

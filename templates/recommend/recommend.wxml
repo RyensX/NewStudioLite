@@ -1,0 +1,110 @@
+<wxs src="../../utils/wxmlUtil.wxs" module="wxsUtil" />
+<import src="../gloabal/gloabal" />
+
+<!--小卡片uiMiddleCard-->
+<template name="recommendListItem">
+  <view class="recommendListItemBody" bindtap="onItemClick" data-id="{{id}}">
+    <image lazy-load="true" class="smailImage" src="{{cover}}"></image>
+    <view class="recommendListItemTxt" style="height:85px;">
+      <view class="recommendListItemTitle">{{title}}</view>
+      <view class="recommendListItemExt">
+        <view class="recommendListItemAuthor">{{author.userinfo.username}}</view>
+        <van-icon class="recommendListItemMenu" name="ellipsis" catchtap="onRecommendMenuClick" />
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--大卡片uiBigCard-->
+<template name="recommendListItemBig">
+  <view class="recommendListItemBody" bindtap="goWeb" data-title="{{title}}" data-url="{{url}}" data-id="{{id}}">
+    <view style="margin-left:8px;">
+      <view style="display: flex;flex-direction: row;justify-content: space-between;">
+        <view class="recommendListItemTxt top">
+          <view class="recommendListItemExt">
+            <view style="display: flex;flex-direction: row;">
+              <image lazy-load="true" class="recommendAuthorIcon" src="https://images.weserv.nl/?url={{creator.avatar}}"></image>
+              <view class="recommendListBigItemAuthor">{{creator.username}}</view>
+            </view>
+          </view>
+        </view>
+        <van-icon class="recommendListItemMenu recommendListBigItemMenuIcon" name="ellipsis" catchtap="onRecommendMenuClick" />
+      </view>
+      <view class="recommendListBigItemTitle" style="margin:0 0 6px 4px;">{{title}}</view>
+    </view>
+    <image lazy-load="true" class="bigImage" src="{{cover}}"></image>
+    <view style="font-size: 12px;padding: 8px;">立即查看
+    </view>
+  </view>
+</template>
+
+<!--大卡片uiBigCardTop-->
+<template name="recommendListItemBigTop">
+  <view class="recommendListItemBody" bindtap="onItemClick" data-title="{{share_info.title}}" data-url="{{url}}" data-id="{{id}}">
+    <image lazy-load="true" class="bigImage" src="{{cover}}"></image>
+    <view class="watch">
+      <van-icon color="#E64B3C" name="eye-o" />大家都在看
+    </view>
+    <view style="display: flex;flex-direction: row;justify-content: space-between;">
+      <view class="recommendListItemTxt" style="padding-top: 0;">
+        <view class="recommendListItemTitle" style="max-width: 460rpx;margin: 12px 0 0;">{{share_info.title}}</view>
+        <view class="recommendListItemExt">
+          <view style="display: flex;flex-direction: row;padding-left: 4px;">
+            <image lazy-load="true" class="recommendAuthorIcon" src="https://images.weserv.nl/?url={{author.userinfo.avatar}}"></image>
+            <view class="recommendListBigItemAuthor">{{author.userinfo.username}}</view>
+            <view class="recommendListBigItemAuthor" style="color: #D85648;">关注</view>
+          </view>
+        </view>
+      </view>
+      <view class="recommendBigItemMenuContent">
+        <van-icon class="recommendListBigItemMenuIcon" size="22px" info="{{count.count_collect}}" name="star-o" />
+        <van-icon class="recommendListBigItemMenuIcon" size="22px" info="{{count.count_like}}" name="good-job-o" />
+        <van-icon class="recommendListItemMenu recommendListBigItemMenuIcon" size="22px" name="ellipsis" catchtap="onRecommendMenuClick" />
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--创作者 uiCollectionSlideOne-->
+<template name="recommendCreator">
+  <view class="recommendCreatorMenu">
+    <view style="font-weight: bold;">推荐创作人</view>
+    <view style="font-size: small;color: gray;margin-top:auto;margin-bottom:auto;">查看更多
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <scroll-view class="recommendScroll" show-scrollbar="false" scroll-x>
+    <view wx:for="{{children}}" wx:key="index" class="recommendScrollItem">
+      <image lazy-load="true" mode="widthFix" class="avatar" src="https://images.weserv.nl/?url={{item.model.resource.avatar}}"></image>
+      <view class="name">{{item.model.resource.username}}</view>
+      <view class="info">
+        {{item.model.resource.count.count_article}} 作品 · {{item.model.resource.count.count_follower}} 粉丝
+      </view>
+      <view class="info">{{item.model.resource.occupation}}</view>
+      <view class="care">+ 关注</view>
+    </view>
+  </scroll-view>
+</template>
+
+
+
+<!--推荐Tab-->
+<template name="recommend">
+  <template is="banner" data="{{...(data.children[0])}}"></template>
+  <view class="grid-layout">
+    <block wx:for="{{wxsUtil.slice(data.children,1)}}" wx:key="index">
+      <view class="grid-item" wx:if="{{item.type=='uiMiddleCard'}}">
+        <template is="recommendListItem" data="{{...(item.children[0].model.resource)}}"></template>
+      </view>
+      <view class="grid-item-big" wx:elif="{{item.type=='uiBigCardTop'}}">
+        <template is="recommendListItemBigTop" data="{{...(item.children[0].model.resource)}}"></template>
+      </view>
+      <view class="grid-item-big" wx:elif="{{item.type=='uiBigCard'}}">
+        <template is="recommendListItemBig" data="{{...(item.children[0].model.resource)}}"></template>
+      </view>
+      <view class="grid-item-big" wx:elif="{{item.type=='uiCollectionSlideOne'}}">
+        <template is="recommendCreator" data="{{...(item)}}"></template>
+      </view>
+    </block>
+  </view>
+</template>

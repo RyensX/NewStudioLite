@@ -1,0 +1,78 @@
+.searchHomeCategoryBody {
+  width: 100%;
+  padding: 4px 16px;
+  box-sizing: border-box;
+}
+
+.searchHomeCategoryBody .searchHomeCategoryHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.searchHomeCategoryBody .searchHomeCategoryHeader .searchHomeCategoryTitle {
+  padding: 12px;
+  font-weight: bold;
+}
+
+.searchHomeCategoryBody .searchHomeCategoryHeader .searchHomeCategoryAll {
+  padding: 12px;
+  font-size: 11px;
+  color: #D75B4F;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: bold;
+}
+
+.searchHomeCategoryBody .searchHomeCategoryItem {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.searchHomeCategoryBody .searchHomeCategoryItem image {
+  z-index: -1;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.searchHomeCategoryBody .searchHomeCategoryItem .searchHomeCategoryItemTitle {
+  z-index: 1;
+  color: white;
+  top: 0;
+  left: 0;
+  margin: 16px;
+  margin-left: 18px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+}
+
+/*菜单*/
+.searchMenuCon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+  margin-top: 16rpx;
+}
+
+.searchMenuCon .searchMenu {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+  padding: 8px 24px;
+  font-size: 10px;
+}
+
+.searchMenuCon .searchMenu image {
+  margin: auto;
+  width: 48rpx;
+  padding-bottom: 8px;
+}

@@ -1,0 +1,33 @@
+/* pages/searchDetail/searchDetail.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.searchDetail .header {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchDetail .discoverTitle{
+  padding:8rpx 32rpx;
+  font-size: 12px;
+  font-weight: bold;
+  color: gray;
+}
+
+.searchDetail .total{
+  display: inline;
+  color:#D15347
+}
+
+.searchDetail .header .search {
+  width: 100%;
+}
+
+.searchDetail .header .cannel {
+  margin: auto;
+  width: 120rpx;
+  text-align: center;
+  margin-right: 16rpx;
+}

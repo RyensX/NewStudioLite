@@ -1,0 +1,3 @@
+<!--pages/study/study.wxml-->
+<web-view src="https://app.xinpianchang.com/page/edu">
+</web-view>

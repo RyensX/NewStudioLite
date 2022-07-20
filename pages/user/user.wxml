@@ -1,0 +1,49 @@
+<!--pages/user/user.wxml-->
+<view class="userProfile">
+  <view class="header">
+    <image class="background" mode="aspectFill" src="{{userInfo.app_background?('https://images.weserv.nl/?url='+userInfo.app_background):'../../static/default_backaground.jpg'}}"></image>
+
+    <view class="userInfo">
+      <image class="avatar" src="https://images.weserv.nl/?url={{userInfo.avatar}}"></image>
+      <view class="nickname">{{userInfo.username}}</view>
+      <view class="other">{{userInfo.verify_description}}</view>
+      <view class="other">{{userInfo.about}}</view>
+    </view>
+
+    <view class="menu">
+      <view class="count">
+        <view class="countItem">
+          <view class="number">{{userInfo.count.count_popularity}}</view>
+          <view class="desc">人气</view>
+        </view>
+        <view class="countItem">
+          <view class="number">{{userInfo.count.count_follower}}</view>
+          <view class="desc">粉丝</view>
+        </view>
+        <view class="countItem">
+          <view class="number">{{userInfo.count.count_followee}}</view>
+          <view class="desc">关注</view>
+
+        </view>
+      </view>
+
+      <view class="action">
+        <view class="contact">联系合作</view>
+        <view class="care">关注</view>
+      </view>
+    </view>
+  </view>
+
+  <van-tabs swipeable animated ellipsis="{{false}}" sticky>
+    <van-tab title="作品">
+    </van-tab>
+    <van-tab title="收藏夹">
+    </van-tab>
+    <van-tab title="专辑">
+    </van-tab>
+    <van-tab title="喜欢">
+    </van-tab>
+    <van-tab title="资料">
+    </van-tab>
+  </van-tabs>
+</view>

@@ -1,0 +1,188 @@
+.tabsRightIcon {
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20rpx;
+}
+
+.recommendListItemBody .watch {
+  display: inline-block;
+  border-radius: 16px;
+  font-size: 10px;
+  padding: 4px 8px;
+  margin-top: 10px;
+  margin-left: 8px;
+  color: #DF6B5F;
+  background-color: #FDE1E0;
+}
+
+.grid-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 14rpx;
+  padding-right: 14rpx;
+  padding-top: 8rpx;
+}
+
+.grid-item {
+  width: 50%;
+  border-radius: 12rpx;
+}
+
+.grid-item-big {
+  width: 100%;
+  border-radius: 12rpx;
+}
+
+.recommendListItemBody {
+  background-color: white;
+  margin: 8rpx;
+  box-shadow: black 8px;
+  border-radius: 6px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.recommendListItemBody .recommendListItemTxt {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.smailImage {
+  width: 100%;
+  display: block;
+  max-height: 200rpx;
+}
+
+.bigImage {
+  width: 100%;
+  display: block;
+}
+
+.bigImage {
+  width: 100%;
+}
+
+.recommendListItemBody .recommendListItemTxt .recommendListItemTitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.recommendListBigItemTitle {
+  font-size: small;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.recommendListItemBody .recommendListItemTxt .recommendListItemExt {
+  display: flex;
+  flex-direction: row;
+  padding-top: 8px;
+  justify-content: space-between;
+}
+
+.recommendListItemBody .recommendListItemTxt .recommendListItemExt .recommendListItemAuthor {
+  font-size: 12px;
+  color: gray;
+}
+
+.recommendListItemBody .recommendListItemTxt .recommendListItemExt .recommendListBigItemAuthor {
+  font-size: 12px;
+  color: gray;
+  margin: auto;
+  padding-left: 8px;
+}
+
+.recommendListItemMenu {
+  transform: rotate(90deg);
+}
+
+.recommendListItemMenuIcon {
+  padding: 4px;
+  margin-left: 4px;
+}
+
+.recommendListBigItemMenuIcon {
+  padding: 4px;
+  margin-left: 8px;
+}
+
+.recommendAuthorIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.recommendBigItemMenuContent {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 4px;
+}
+
+.recommendCreatorMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.recommendScroll {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+.recommendScroll .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.recommendScrollItem {
+  display: inline-block;
+  flex-direction: row;
+  text-align: center;
+  background-color: white;
+  margin: 8px;
+  padding: 18px;
+  border-radius: 8px;
+}
+
+.recommendScrollItem .name {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  width: 80px;
+}
+
+.recommendScrollItem .info {
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.recommendScrollItem .care {
+  margin-top: 8px;
+  background-color: #E74B3C;
+  border-radius: 20px;
+  padding: 4px 12px;
+  color: white;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.recommendScroll ::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}

@@ -1,0 +1,17 @@
+var slice = function (arr, index) {
+  return arr.slice(index)
+}
+
+var object2Str = function (object) {
+  return JSON.stringify(object)
+}
+
+var checkObjectFromArray = function (arr, obj) {
+  return arr.indexOf(obj) != -1
+}
+
+module.exports = {
+  slice: slice,
+  object2Str: object2Str,
+  checkObjectFromArray: checkObjectFromArray
+}

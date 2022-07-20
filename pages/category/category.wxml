@@ -1,0 +1,6 @@
+<!--pages/category/category.wxml-->
+<import src="../../templates/gloabal/gloabal" />
+
+<view>
+  <template is="videoList" wx:if="{{videoList}}" data="{{videoList}}"></template>
+</view>

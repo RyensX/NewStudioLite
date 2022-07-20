@@ -1,0 +1,59 @@
+<!--pages/noteDetail/noteDetail.wxml-->
+<view class="nodeDetail">
+  <!--顶栏-->
+  <van-nav-bar fixed placeholder>
+    <view slot="left" class="nodeDetailTopBar">
+      <van-icon name="arrow-left" catchtap="backNav" size="32rpx" />
+      <image lazy-load="true" src="https://images.weserv.nl/?url={{detailData.user.avatar}}"></image>
+      <view>{{detailData.user.username}}</view>
+    </view>
+    <view slot="right" class="care">关注</view>
+  </van-nav-bar>
+  <!--内容-->
+  <view class="imgs">
+    <view wx:for="{{detailData.images}}" wx:key="index">
+      <image lazy-load="true" mode="aspectFill" src="{{item}}" catchtap="onImgClick" data-url="{{item}}"></image>
+    </view>
+  </view>
+  <view class="nodeDetailContent">
+    <view class="title">{{detailData.title}}</view>
+    <view class="content">{{detailData.content}}</view>
+    <view class="time">{{detailData.addtime}}</view>
+    <!--评论-->
+    <view class="comment">
+      <view class="commentInput">
+        <van-icon name="user-circle-o" size="48rpx" />
+        <view>说说你的看法吧 ~</view>
+      </view>
+      <view wx:if="{{noteComment&&noteComment.length==0}}">暂无评论</view>
+      <view wx:if="{{noteComment&&noteComment.length>0}}" style="padding:24rpx 0;font-size:small;font-weight: bold;">共 {{noteComment.length}} 条评论</view>
+      <van-loading wx:if="{{!noteComment}}" color="#1989fa" style="width: 100%;height: 100px;padding: 16px;margin-top: 16px;" size="24px">评论加载中...</van-loading>
+      <view wx:if="{{noteComment}}" wx:for="{{noteComment}}" style="margin-bottom: 8px;flex-direction: row;display: flex;padding-bottom: 4px;" wx:key="index">
+        <van-image round width="48rpx" height="48rpx" src="{{item.userDetail.avatar_small}}" />
+        <view style="flex-direction: column;padding-left: 24rpx;width: 100%;">
+          <view style="font-size: 20rpx;margin-bottom: 8rpx;">{{item.userDetail.nickname}}</view>
+          <text decode="true" style="font-size: 26rpx;">{{item.contentText}}</text>
+          <view style="display: flex;flex-direction: row;width: 100%;justify-content: space-between;">
+            <view style="font-size: 8px;padding-top: 10px;">{{item.addDate}}</view>
+            <view style="font-size: 12px;margin-top: auto;margin-bottom: auto;">
+              <van-icon name="good-job-o" /> {{item.likeCount}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-tabbar>
+    <view class="bottomBar">
+      <view class="bottomBarSumit">
+        <van-icon name="edit" /> 说说你的看法吧 ~
+      </view>
+      <view class="bottomBarMenus">
+        <van-icon name="good-job-o" size="42rpx" />
+        <view class="bottomBarMenu">{{detailData.count.count_liked}}</view>
+        <van-icon name="comment-o" size="42rpx" />
+        <view class="bottomBarMenu">{{detailData.count.count_commented}}</view>
+      </view>
+    </view>
+  </van-tabbar>
+</view>

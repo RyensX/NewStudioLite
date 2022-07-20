@@ -1,0 +1,61 @@
+<!--创作者小卡片-->
+<template name="creatorSmailCard">
+  <view class="playTeam" wx:if="{{teams}}">
+    创作人
+    <scroll-view class="playTeamScroll" show-scrollbar="false" scroll-x>
+      <view style="display: inline-block;" wx:for="{{teams}}" wx:key="index" catchtap="onCreatorClick" data-userid="{{item.userinfo.id}}">
+        <view class="creatorSmailCardBody">
+          <view class="creatorSmailCardInfo">
+            <image lazy-load="true" src="https://images.weserv.nl/?url={{item.userinfo.avatar}}"></image>
+            <view style="margin:auto;">
+              <view class="creatorSmailCreator">{{item.userinfo.username}}</view>
+              <view class="creatorSmailType">{{item.role}}</view>
+            </view>
+          </view>
+          <view class="creatorSmailCardCare">关注</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</template>
+
+<!--标签列表-->
+<!--提供对象数组tags-->
+<template name="tagCards">
+  <view class="tagsBody">
+    <view class="tag" wx:for="{{tags}}" wx:key="index" catchtap="onTagClick" data-tabname="{{item.name}}" data-tabid="{{item.id}}">{{item.name}}</view>
+  </view>
+</template>
+
+<!--视频列表-->
+<!--数据:videoList:[{}]-->
+<template name="videoList">
+  <view class="videoListBody" style="font-weight: bold;  font-size: 14px;">
+    <view class="videoBody" wx:for="{{videoList}}" wx:key="index" catchtap="onVideoClick" data-id="{{item.id}}">
+      <image lazy-load="true" class="videoCover" mode="widthFix" src="{{item.cover}}"></image>
+      <view class="videoInfos">
+        <view class="videoTitle">{{item.title}}</view>
+        <view class="videoInfo">播放 {{item.count.count_view}} · 喜欢 {{item.count.count_like}}</view>
+        <view class="videoAuthor">
+          <image lazy-load="true" src="{{item.author.userinfo.avatar}}"></image>
+          <view class="videoUserName">{{item.author.userinfo.username}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--Banner-->
+<!--数据 banners:[{}]-->
+<!--支持两种数据结构-->
+<template name="banner">
+  <swiper class="banner" style="height: {{children?'400rpx':'380rpx'}};" circular="{{true}}" autoplay="true">
+    <swiper-item wx:for="{{children?children:banners}}" wx:key="index">
+      <van-image width="100%" fit="widthFix" radius="12rpx" lazy-load src="{{item.model.cover?item.model.cover:item.cover}}" bindtap="goWeb" data-url="{{item.model.url?item.model.url:item.url}}" />
+      <view class="title">{{item.model.title?item.model.title:item.title}}</view>
+      <view class="indexContent">
+        <view class="index">{{index+1}}</view>/{{children?children.length:banners.length}}
+      </view>
+    </swiper-item>
+  </swiper>
+</template>

@@ -1,0 +1,44 @@
+<!--动态-->
+<template name="noteItem">
+  <view class="noteItem" catchtap="onNoteItemClick" data-id="{{id}}">
+    <view class="header">
+      <view class="headerLeft">
+        <image src="https://images.weserv.nl/?url={{user.avatar}}" lazy-load="true"></image>
+        <view class="info">
+          <view class="username">{{user.username}}</view>
+          <view class="time">{{addtime}} 发布</view>
+        </view>
+      </view>
+      <view class="headerRight">
+        <view>+ 关注</view>
+        <van-icon name="ellipsis" size="16px" catchtap="onNoteItemMenuClick" />
+      </view>
+    </view>
+    <view class="title">{{title}}</view>
+    <view class="content {{contentShow[id]?'':'contentHide'}}" catchtap="onContentClick" data-id="{{id}}">{{content}}</view>
+    <view class="imgs {{images.length<3?'imgs2':''}}">
+      <view class="imgW" style="{{images.length<3?'margin-right:16rpx':''}}" wx:for="{{images}}" wx:for-index="i" wx:key="i" wx:if="{{i<3}}">
+        <image mode="aspectFill" src="{{item}}" lazy-load="true" catchtap="onImgClick" data-index="{{index}}" data-url="{{item}}"></image>
+        <view wx:if="{{i==2&&images.length>3}}">+{{images.length-3}}</view>
+      </view>
+    </view>
+    <view class="menus">
+      <view class="menu">
+        <van-icon name="good-job-o" size="16px" />{{count.count_liked}}
+      </view>
+      <view class="menu">
+        <van-icon name="comment-o" size="16px" />{{count.count_commented}}
+      </view>
+      <view class="menu">
+        <van-icon name="share-o" size="16px" />{{count.count_shared}}
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--界面-->
+<view>
+  <template is="noteItem" wx:for="{{notes}}" wx:key="index" data="{{...item,contentShow,index}}"></template>
+  <van-loading wx:if="{{notes}}" color="#1989fa" class="noteLoading" size="24px">加载中...</van-loading>
+</view>
+<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onShareSelect" bind:close="onShareClose" />

@@ -1,0 +1,14 @@
+<!--pages/search/search.wxml-->
+<import src="../../templates/search/search" />
+<import src="../../templates/gloabal/gloabal" />
+
+<view style="padding: 0 16rpx;">
+  <van-search style="width: 100%;" placeholder="请输入搜索关键词" bindtap="goSearch" readonly />
+</view>
+<view>
+  <view style="margin:0 8px">
+    <template is="banner" data="{{banners}}"></template>
+  </view>
+  <template is="searchMenus" data="{{recommends}}"></template>
+  <template is="searchHomeCategory" data="{{categories}}"></template>
+</view>

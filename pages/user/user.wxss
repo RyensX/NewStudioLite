@@ -1,0 +1,116 @@
+/* pages/user/user.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.userProfile {
+  width: 100%;
+  color: white;
+}
+
+.userProfile .header {
+  width: 100%;
+  position: relative;
+}
+
+.userProfile .header .background {
+  display: inline-block;
+  width: 100%;
+  height: 500rpx;
+  filter: brightness(50%);
+}
+
+.userProfile .header .userInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 32rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.userProfile .header .userInfo>image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.userProfile .header .userInfo .nickname {
+  font-size: 16px;
+  color: white;
+  margin-top: 24rpx;
+}
+
+.userProfile .header .userInfo .other {
+  font-size: 11px;
+  color: rgb(228, 228, 228);
+  margin-top: 16rpx;
+}
+
+.userProfile .header .menu {
+  padding: 32rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 32rpx;
+}
+
+.userProfile .header .menu .count {
+  display: flex;
+  flex-direction: row;
+}
+
+.userProfile .header .menu .count .countItem {
+  margin-right: 36rpx;
+}
+
+.userProfile .header .menu .count .countItem>view {
+  margin: auto;
+}
+
+.userProfile .header .menu .count .countItem .number {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.userProfile .header .menu .count .countItem .desc {
+  margin-top: 8rpx;
+  color: rgb(228, 228, 228);
+}
+
+.userProfile .header .menu .action {
+  padding: 32rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  margin: auto;
+}
+
+.userProfile .header .menu .action .contact {
+  color: black;
+  background-color: white;
+  font-size: 11px;
+  text-align: center;
+  padding: 12rpx 20rpx;
+  border-radius: 26rpx;
+}
+
+.userProfile .header .menu .action .care {
+  color: white;
+  background-color: #E74B3C;
+  font-size: 13px;
+  padding: 12rpx 20rpx;
+  border-radius: 26rpx;
+  margin-left: 20rpx;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+.hotMenuCon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.hotMenuCon .hotMenu {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+  padding: 8px 24px;
+  font-size: 10px;
+}
+
+.hotMenuCon .hotMenu image {
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.hotCardMenus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6px;
+}
+
+.hotCardMenus .hotCardMenu {
+  display: flex;
+  flex-direction: row;
+  width: 33.3%;
+  text-align: center;
+  padding: 8px 24px;
+  font-size: 12px;
+}
+
+.hotCardMenu van-icon {
+  margin-right: 4px;
+}

@@ -1,0 +1,130 @@
+/* pages/noteDetail/noteDetail.wxss */
+
+.nodeDetail {}
+
+.nodeDetail .care {
+  margin-right: 180rpx;
+  padding: 4px 8px;
+  color: #E24D3D;
+  border: 1.5px solid #E24D3D;
+  border-radius: 20%;
+  /*暂时隐藏*/
+  display: none;
+}
+
+.nodeDetail .nodeDetailTopBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.nodeDetail .nodeDetailTopBar image {
+  width: 54rpx;
+  height: 54rpx;
+  margin: auto;
+  border-radius: 50%;
+  margin-left: 36rpx;
+}
+
+.nodeDetail .nodeDetailTopBar view {
+  margin-left: 16rpx;
+  font-size: 12px;
+}
+
+.nodeDetail .imgs {
+  padding: 24rpx;
+  padding-bottom: 0;
+  padding-right: 8rpx;
+}
+
+.nodeDetail .imgs view {
+  display: inline-block;
+  width: 33.3%;
+  height: 230rpx;
+  padding-right: 16rpx;
+  padding-bottom: 16rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.nodeDetail .imgs image {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.nodeDetail .nodeDetailContent {
+  padding: 0 24rpx;
+}
+
+.nodeDetail .nodeDetailContent .title {
+  font-weight: 500;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.nodeDetail .nodeDetailContent .content {
+  font-size: 14px;
+  padding-top: 8rpx;
+}
+
+.nodeDetail .nodeDetailContent .time {
+  font-size: 10px;
+  color: gray;
+  margin-top: 8rpx;
+}
+
+.nodeDetail .nodeDetailContent .comment {
+  border-top: 0.3px solid #d6d6d6;
+  margin: 32rpx 0;
+  padding-top: 32rpx;
+}
+
+.nodeDetail .nodeDetailContent .comment .commentInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.nodeDetail .nodeDetailContent .comment .commentInput>view {
+  font-size: small;
+  color: #9EA3AC;
+  background-color: #F3F4F6;
+  margin: auto;
+  margin-left: 24rpx;
+  width: 90%;
+  padding: 16rpx 36rpx;
+  border-radius: 26px;
+}
+
+.nodeDetail .bottomBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nodeDetail .bottomBar .bottomBarSumit {
+  color: #9EA3AC;
+  background-color: #F3F4F6;
+  margin: auto;
+  margin-left: 24rpx;
+  width: 50%;
+  font-size: small;
+  padding: 16rpx 36rpx;
+  border-radius: 26px;
+}
+
+.nodeDetail .bottomBar .bottomBarMenus {
+  margin: auto;
+  margin-right: 32rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.nodeDetail .bottomBar .bottomBarMenus .bottomBarMenu {
+  margin: auto;
+  padding: 16rpx;
+  font-size: small;
+}

@@ -1,0 +1,9 @@
+/**
+全局统一导入模板的wxss
+**/
+
+@import "../templates/recommend/recommend.wxss";
+@import "../templates/care/care.wxss";
+@import "../templates/search/search.wxss";
+@import "../templates/hot/hot.wxss";
+@import "../templates/gloabal/gloabal.wxss";

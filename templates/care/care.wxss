@@ -1,0 +1,61 @@
+.item {
+  width: 90%;
+  margin: 24px auto;
+  border-radius: 14px;
+  box-shadow: 0px 0px 8px -4px #666;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.item .top {
+  height: 60px;
+  margin-bottom: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.left .avatar {
+  width: 85rpx;
+  display: block;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.left .desc {
+  font-size: 10px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.left .uname {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.right {
+  padding: 6px 18px;
+  font-size: 12px;
+  color: #b14f42;
+  font-weight: 600;
+  background-color: #F8EDEB;
+  border-radius: 14px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom .imgs {
+  width: 31%;
+  border-radius: 6px;
+}

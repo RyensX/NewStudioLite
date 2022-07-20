@@ -1,0 +1,72 @@
+<!--pages/me/me.wxml-->
+<view class="meContent">
+  <view class="header">
+    <view class="user" bindtap="login">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <view class="nickname">{{userInfo.nickName}}</view>
+    </view>
+
+    <view class="menus">
+      <van-icon name="qr" size="40rpx" catchtap="scan" />
+      <van-icon name="setting-o" size="40rpx" />
+    </view>
+  </view>
+
+  <image src="../../static/icons/vip.png" mode="widthFix" style="width: 100%;padding: 0 32rpx;box-sizing: border-box;margin-bottom: 32rpx;"></image>
+
+  <view class="actionsHeader">
+    <view style="font-size: 14px;">创作中心</view>
+    <view style="font-size: 11px;">草稿箱</view>
+  </view>
+  <view class="actions">
+    <template is="mePageActionCard" wx:for="{{actions}}" wx:key="index" data="{{...item}}"></template>
+  </view>
+
+  <van-cell title-style="color:black;padding: 12rpx 0;" clickable>
+    <view slot="title">
+      <view class="van-cell-text">传输列表</view>
+    </view>
+  </van-cell>
+  <van-cell title-style="color:black;padding: 12rpx 0;" clickable>
+    <view slot="title">
+      <view class="van-cell-text">会员中心</view>
+    </view>
+    <view slot="right-icon" class="hint">限时6.7折</view>
+  </van-cell>
+  <van-cell title-style="color:black;padding: 12rpx 0;" clickable>
+    <view slot="title">
+      <view class="van-cell-text">私密视频</view>
+    </view>
+  </van-cell>
+  <van-cell title-style="color:black;padding: 12rpx 0;" clickable>
+    <view slot="title">
+      <view class="van-cell-text menu" style="display: inline;">作品通</view>
+      <view class="tag">推荐</view>
+    </view>
+    <view slot="right-icon" class="hint">好作品应该被更多人看见</view>
+  </van-cell>
+  <van-cell title-style="color:black;padding: 12rpx 0;" clickable>
+    <view slot="title">
+      <view class="van-cell-text menu">播放历史</view>
+      <view class="tag">NEW</view>
+    </view>
+  </van-cell>
+  <van-cell title-style="color:black;padding: 12rpx 0;" clickable>
+    <view slot="title">
+      <view class="van-cell-text">我的手记</view>
+    </view>
+  </van-cell>
+</view>
+
+<!--数据: [{icon,name,desc}]-->
+<template name="mePageActionCard">
+  <view class="mePageActionCard">
+    <view class="content">
+      <image src="{{icon}}"></image>
+      <view class="info">
+        <view class="title">{{title}}</view>
+        <view class="desc">{{desc}}</view>
+      </view>
+    </view>
+  </view>
+</template>

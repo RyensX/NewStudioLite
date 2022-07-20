@@ -1,0 +1,18 @@
+<!--pages/searchDetail/searchDetail.wxml-->
+
+<import src="../../templates/gloabal/gloabal" />
+
+<view class="searchDetail">
+  <view class="header">
+    <van-search class="search" value="{{keyword}}" placeholder="请输入搜索关键词" bind:search="search" />
+    <view class="cannel" bindtap="back">取消</view>
+  </view>
+  <view wx:if="{{videoList}}" style="font-size: 13px;padding :0 32rpx;padding-top: 16rpx;">
+    共 <view class="total">{{searchTotal}}</view> 部作品
+  </view>
+  <template is="videoList" wx:if="{{videoList}}" data="{{videoList}}"></template>
+
+  <!--搜索发现-->
+  <view class="discoverTitle">热门搜索</view>
+  <template wx:if="{{!videoList}}" is="tagCards" data="{{tags}}"></template>
+</view>

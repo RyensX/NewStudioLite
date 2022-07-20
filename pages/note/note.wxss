@@ -1,0 +1,155 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #F7F7F7;
+}
+
+.noteItem {
+  background-color: white;
+  margin-top: 16rpx;
+  padding: 32rpx;
+  padding-bottom: 0;
+  box-shadow: 0 0.3px 0.3px rgba(0, 0, 0, 0.3);
+}
+
+.noteItem .menus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6px;
+  border-top: 0.3px solid #d6d6d6;
+}
+
+.noteItem .menus .menu {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 8px 24px;
+  font-size: 12px;
+}
+
+.noteItem .menus .menu van-icon {
+  margin-right: 4px;
+}
+
+.noteItem .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.noteItem .header .headerLeft {
+  display: flex;
+  flex-direction: row;
+}
+
+.noteItem .header .headerLeft .info {
+  margin: auto;
+  margin-left: 16rpx;
+}
+
+.noteItem .header .headerLeft .username {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.noteItem .header .headerLeft .time {
+  font-size: 10px;
+  color: gray;
+  margin-top: 4rpx;
+}
+
+.noteItem .header .headerLeft image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+
+.noteItem .header .headerRight {
+  display: flex;
+  flex-direction: row;
+}
+
+.noteItem .header .headerRight>view:first-child {
+  margin: auto;
+  margin-right: 16rpx;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  color: #E34C3D;
+}
+
+.noteItem .header .headerRight van-icon {
+  transform: rotate(90deg);
+}
+
+.noteItem .title {
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 16rpx;
+}
+
+.noteItem .content {
+  font-size: 12px;
+  padding-top: 8rpx;
+  display: -webkit-box;
+}
+
+.noteItem .contentHide {
+  font-size: 12px;
+  padding-top: 8rpx;
+  /*规定子元素的排列方向 */
+  -webkit-box-orient: vertical;
+  /*限制文本显示的行数  */
+  -webkit-line-clamp: 3;
+  /*实现多余的文字隐藏并用省略号来代表被隐藏的文字  */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.noteItem .imgs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 8rpx 0;
+}
+
+.noteItem .imgs2 {
+  justify-content: start;
+}
+
+.noteItem .imgs image {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 4px;
+  display: block;
+}
+
+.noteItem .imgs .imgW {
+  position: relative;
+  margin: 16rpx 0;
+  overflow: hidden;
+}
+
+.noteItem .imgs .imgW view {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 8rpx 12rpx;
+  color: white;
+  font-size: small;
+  background-color: black;
+  box-sizing: border-box;
+  opacity: 0.5;
+  display: block;
+}
+
+.noteLoading {
+  width: 100%;
+  height: 30px;
+  margin: auto;
+  padding: 16rpx;
+  display: inline-block;
+}

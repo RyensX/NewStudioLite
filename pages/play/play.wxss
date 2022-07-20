@@ -1,0 +1,44 @@
+/* pages/play/play.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.detail {
+  padding: 32rpx;
+  padding-bottom: 4px;
+}
+
+.playMenus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.detail .desc {
+  font-size: small;
+  margin-top: 16rpx;
+  display: -webkit-box;
+}
+
+.detail .descHide {
+  font-size: small;
+  margin-top: 16rpx;
+  /*规定子元素的排列方向 */
+  -webkit-box-orient: vertical;
+  /*限制文本显示的行数  */
+  -webkit-line-clamp: 3;
+  /*实现多余的文字隐藏并用省略号来代表被隐藏的文字  */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playMenus van-grid-item {
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  text-align: center;
+  padding: 8px 24px;
+  font-size: 12px;
+  font-weight: 600;
+}

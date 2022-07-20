@@ -1,0 +1,9 @@
+<!-- 提供数据{
+  object:string
+} -->
+<template name="unkown">
+<view style="width: 100%;text-align: center;">未实现视图</view>
+  <view style="width: 100%;height: 100%;">
+    {{object}}
+  </view>
+</template>

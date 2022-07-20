@@ -1,0 +1,25 @@
+<!--分类卡片-->
+<!--数据 categories:[{}]-->
+<template name="searchHomeCategory">
+  <view class="searchHomeCategoryBody" wx:if="{{categories}}">
+    <view class="searchHomeCategoryHeader">
+      <view class="searchHomeCategoryTitle">作品</view>
+      <view class="searchHomeCategoryAll" catchtap="onSearchCategoryAllClick" data-id="0" data-name="全部">全部作品</view>
+    </view>
+    <view class="searchHomeCategoryItem" wx:for="{{categories}}" wx:key="index" catchtap="onSearchCategoryClick" data-id="{{item.id}}" data-name="{{item.name}}" data-index="{{index}}">
+      <image lazy-load="true" src="{{item.cover}}" mode="widthFix" lazy-load="true" />
+      <view class="searchHomeCategoryItemTitle">{{item.category_name}}</view>
+    </view>
+  </view>
+</template>
+
+<!--菜单-->
+<!--数据 recommends:[{}]-->
+<template name="searchMenus">
+  <view class="searchMenuCon">
+    <view class="searchMenu" wx:for="{{recommends}}">
+      <image lazy-load="true" src="{{item.icon}}" mode="widthFix"></image>
+      {{item.title}}
+    </view>
+  </view>
+</template>

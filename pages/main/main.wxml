@@ -1,0 +1,31 @@
+<!--pages/main/main.wxml-->
+
+<wxs src="../../utils/icons.wxs" module="icons" />
+<wxs src="../../utils/wxmlUtil.wxs" module="utils" />
+
+<import src="../../templates/recommend/recommend" />
+<import src="../../templates/care/care" />
+<import src="../../templates/hot/hot" />
+
+<view>
+  <van-tabs active="{{tabActive}}" bind:change="onChange" swipeable animated ellipsis="{{false}}" bind:change="onTabChanage" sticky>
+    <van-tab wx:for="{{tabData}}" wx:key="index" title="{{item.title}}" name="{{item.link}}">
+      <!--未实现视图-->
+      <view wx:if="{{!utils.checkObjectFromArray(implTemplateTabIndex,index)}}" style="width: 100%;word-wrap: break-word;">
+        <view style="width: 100%;text-align: center;padding: 16px;">未实现视图，数据如下</view>
+        {{utils.object2Str(tabPageData[item.title])}}
+      </view>
+      <!--数据视图-->
+      <template is="{{item.alias}}" wx:if="{{tabPageData[item.title]}}" data="{{...(tabPageData[item.title])}}">
+      </template>
+    </van-tab>
+    <!--
+    <view slot="nav-right" style="flex-direction: row;display: flex;background-color: white;">
+      <cover-image class="tabsRightIcon" src="../../static/icons/r_menu.png" />
+      <cover-image class="tabsRightIcon" src="../../static/icons/chat.png" />
+    </view>
+    -->
+  </van-tabs>
+</view>
+<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onShareSelect" bind:close="onShareClose" />
+<van-toast id="van-toast" class="bottom" />
